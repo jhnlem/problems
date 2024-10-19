@@ -18,9 +18,5 @@ int main(void) {
 	} while(fabs(ps - s) > pow(10,-n-1));
 
 	printf("%.5f\n", s);
-
-
-
-
 	return 0;
 }
