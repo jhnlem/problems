@@ -15,7 +15,7 @@ double F(double x)
 double f(double x)
 {
 	double h = 0.0001;
-	return (F(x + h) - F(x))/h;
+	return (F(x + h) - F(x)) / h;
 }
 
 int main(void)
