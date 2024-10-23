@@ -27,7 +27,7 @@ double f(double x)
 
 int main(int argc, char *argv[])
 {
-	double s = 2.0;
+	double s = 3.1;
 	double ps = 0.0;
 	long n = strtol(argv[1], 0, 10);
 
