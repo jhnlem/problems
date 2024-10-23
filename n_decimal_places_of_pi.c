@@ -1,22 +1,42 @@
 /*
-we will use the Leibniz formula for pi:
-pi/4 = sum_k=0( (-1)^k / (2k + 1) ) 
-(it's inefficient)
-*/
+ * Can compute 16 digits of pi.
+ */
 
+#include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
+#include <string.h>
+#include <tgmath.h>
 
-int main(void) {
-	double s = 0, ps = 0, k = 0;
-	double n = 5;
+/*
+ * Calculate sin(x).
+ */
+double F(double x)
+{
+	return sin(x);
+}
 
-	do {
+/*
+ * Calculate the derivative of sin(x).
+ */
+double f(double x)
+{
+	double h = 0.0001;
+	return (F(x + h) - F(x)) / h;
+}
+
+
+int main(int argc, char *argv[])
+{
+	double s = 2.0;
+	double ps = 0.0;
+	long n = strtol(argv[1], 0, 10);
+
+	while (fabs(s - ps) > pow(10,-n - 1)) {
 		ps = s;
-		s += (4 * pow(-1,k)) / (2 * k + 1);
-		k++;
-	} while(fabs(ps - s) > pow(10,-n-1));
+		s -= F(s) / f(s); // Newton's method.
+	}
 
-	printf("%.5f\n", s);
-	return 0;
+	size_t dgt = (size_t){(s - 3) * pow(10,n - 1)} ;
+	printf("3.%zu\n", dgt);
+	return EXIT_SUCCESS;
 }
