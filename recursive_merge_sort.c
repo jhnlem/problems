@@ -70,7 +70,7 @@ void merge_sort(size_t size, double V[])
 size_t issorted(size_t size, double V[])
 {
 	for (size_t t = 0; t < size - 1; ++t) {
-		if(V[t] > V[t + 1])
+		if (V[t] > V[t + 1])
 			return 0;
 	}
 	return 1;
