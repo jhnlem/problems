@@ -15,7 +15,7 @@ void merge(int first, int last, double V[])
 	double U[size];
 
 	// Merge the sub arrays until one of them ends.
-	while (i <= (first + last) / 2 || j <= last) {
+	while (i <= (first + last) / 2 && j <= last) {
 		if (V[i] <= V[j]) {
 			U[c] = V[i];	
 			i++;
