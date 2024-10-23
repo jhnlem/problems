@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
@@ -23,5 +24,5 @@ int main(void)
 	double a = f(3.14);
 
 	printf("%f\n", a);
-	return 0;
+	return EXIT_SUCCESS;
 }

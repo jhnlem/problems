@@ -1,3 +1,4 @@
+#include <stdlib>
 #include <stdio>
 
 
@@ -6,5 +7,5 @@ int main(void) {
 
 
 
-	return 0;
+	return EXIT_SUCCESS;
 }
