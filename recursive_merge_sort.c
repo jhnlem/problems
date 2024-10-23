@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 /*
@@ -58,7 +59,7 @@ void rmsort(size_t first, size_t last, double V[])
 /*
  * Call recursive mergesort.
  */
-void mergesort(size_t size, double V[])
+void merge_sort(size_t size, double V[])
 {
 	rmsort(0, size - 1, V);
 }
@@ -111,7 +112,7 @@ int main(void)
 		};
 	size_t size = sizeof(V) / sizeof(V[0]);
 
-	mergesort(size, V);
+	merge_sort(size, V);
 
 	size_t sorted = issorted(size, V);
 	if (sorted) {
@@ -120,5 +121,5 @@ int main(void)
 	} else {
 		printf("The array is not sorted.\n");
 	}
-	return 0;
+	return EXIT_SUCCESS;
 }
